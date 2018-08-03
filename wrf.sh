@@ -46,16 +46,16 @@ wget "ftp://polar.ncep.noaa.gov/pub/history/sst/rtg_high_res/rtg_sst_grb_hr_0.08
 
 ### Handle ds083.2 
 
-if [ ! -f  "${scriptPath}/scripts/ds083.2/ds083.2.${year}.sh" ]; then
-	echo ds083.2 script for this year was not found
+if [ ! -f  "${scriptPath}/scripts/ds083.2/ds083.2.sh" ]; then
+	echo ds083.2 script template was not found
 else
 	# Change dir, copy script and run
 	cd "${path}/ds083.2.grib2/${year}"
 
-	cp "${scriptPath}/scripts/ds083.2/ds083.2.${year}.sh" "${path}/ds083.2.grib2/${year}"
-	chmod +x "${path}/ds083.2.grib2/${year}/ds083.2.${year}.sh"
+	cp "${scriptPath}/scripts/ds083.2/ds083.2.sh" "${path}/ds083.2.grib2/${year}"
+	chmod +x "${path}/ds083.2.grib2/${year}/ds083.2.sh"
 	# Comment the following line out to skip
-	./"ds083.2.${year}.sh" "$pw"
+	./"ds083.2.sh" "$pw" "${year}"
 fi
 
 ###
@@ -63,30 +63,30 @@ fi
 
 ### Handle ds461.0
 
-if [ ! -f  "${scriptPath}/scripts/ds461.0/ds461.0.${year}.sh" ]; then
-	echo ds461.0 script for this year was not found
+if [ ! -f  "${scriptPath}/scripts/ds461.0/ds461.0.sh" ]; then
+	echo ds461.0 script template was not found
 else
 	cd "${path}/ds461.0/${year}"
 
-	cp "${scriptPath}/scripts/ds461.0/ds461.0.${year}.sh" "${path}/ds461.0/${year}"
-	chmod +x "${path}/ds461.0/${year}/ds461.0.${year}.sh"
+	cp "${scriptPath}/scripts/ds461.0/ds461.0.sh" "${path}/ds461.0/${year}"
+	chmod +x "${path}/ds461.0/${year}/ds461.0.sh"
 	# Comment the following line out to skip
-	./"ds461.0.${year}.sh" "$pw"
+	./"ds461.0.sh" "$pw" "${year}"
 fi
 
 ###
 
 ### Handle ds351.0
 
-if [ ! -f  "${scriptPath}/scripts/ds351.0/ds351.0.${year}.sh" ]; then
-	echo ds351.0 script for this year was not found
+if [ ! -f  "${scriptPath}/scripts/ds351.0/ds351.0.sh" ]; then
+	echo ds351.0 script template was not found
 else
 	cd "${path}/ds351.0/${year}"
 
-	cp "${scriptPath}/scripts/ds351.0/ds351.0.${year}.sh" "${path}/ds351.0/${year}"
-	chmod +x "${path}/ds351.0/${year}/ds351.0.${year}.sh"
+	cp "${scriptPath}/scripts/ds351.0/ds351.0.sh" "${path}/ds351.0/${year}"
+	chmod +x "${path}/ds351.0/${year}/ds351.0.sh"
 	# Comment the following line out to skip
-	./"ds351.0.${year}.sh" "$pw"
+	./"ds351.0.sh" "$pw" "${year}"
 fi
 
 ###
